@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Train</title>
+    <style>
+
+        .train-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .train {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="train-container">
+        <img src="/Javascript_tasks/train.jpg" alt="Train" class="train" id="train">
+    </div>
+    <h1 style="color: blue;">Click the following buttons to handle the animation</h1>
+    <div class="buttons">
+        <button onclick="startTrain()">Start</button>
+        <button onclick="stopTrain()">Stop</button>
+    </div>
+
+    <script>
+        let train = document.getElementById('train');
+        let trainAnimation;
+        let position = 0;
+
+        function startTrain() {
+            stopTrain(); 
+            trainAnimation = requestAnimationFrame(moveTrain);
+        }
+
+        function moveTrain() {
+            position += 2; 
+            train.style.left = position + 'px';
+
+            if (position < window.innerWidth) {
+                trainAnimation = requestAnimationFrame(moveTrain);
+            } else {
+                position = -train.offsetWidth; 
+                trainAnimation = requestAnimationFrame(moveTrain);
+            }
+        }
+
+        function stopTrain() {
+            cancelAnimationFrame(trainAnimation);
+        }
+    </script>
+</body>
+</html>

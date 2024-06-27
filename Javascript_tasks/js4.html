@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date and Time</title>
+    <script>
+        function showDate() {
+            let currentDate = new Date();
+
+            let formattedDate = `${currentDate.getDate()}/${currentDate.toLocaleDateString('en-US', { month: 'short' })}/${currentDate.getFullYear()}`;
+
+            document.getElementById('outputDate').value = formattedDate;
+        }
+
+        function showTime() {
+            let currentTime = new Date().toUTCString();
+            
+            document.getElementById('outputTime').value = currentTime;
+        }
+    </script>
+</head>
+<body>    
+    <button onclick="showDate()">Show Date</button><br><br>
+    
+    <input type="text" id="outputDate" readonly><br><br>
+
+    <button onclick="showTime()">Show Time</button><br><br>
+    
+    <input type="text" id="outputTime" style="width: 200px;" readonly>
+
+</body>
+</html>

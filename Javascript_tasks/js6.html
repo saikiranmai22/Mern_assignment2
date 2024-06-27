@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 270px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width: 80%;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px 10px 10px 40px;
+            margin-top: 5px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background: #fafafa;
+        }
+
+        .input-box i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #0095f6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #007bb5;
+        }
+
+        .or {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #8e8e8e;
+            margin: 20px 0;
+        }
+
+        .or::before, .or::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .or:not(:empty)::before {
+            margin-right: .25em;
+        }
+
+        .or:not(:empty)::after {
+            margin-left: .25em;
+        }
+
+        .forgot-password {
+            color: #00376b;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .remember-me label {
+            font-size: 12px;
+            color: #8e8e8e;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .signup-box {
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup-box a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Instagram</div>
+        <div class="login-box">
+            <form id="loginForm">
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="button" class="button" onclick="login()">Log In</button>
+            </form>
+            
+            <div class="remember-me">
+                <label><input type="checkbox" id="rememberMe"> Remember me</label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+    <div class="signup-box">
+        Don't have an account? <a href="#">Sign up</a>
+    </div>
+
+</body>
+</html>
